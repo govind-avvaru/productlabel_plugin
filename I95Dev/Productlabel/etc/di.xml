@@ -10,7 +10,7 @@
     <preference for="Smile\ProductLabel\Ui\Component\ProductLabel\Form\Modifier\Attribute"
                 type="I95Dev\Productlabel\Ui\Component\ProductLabel\Form\Modifier\Attribute" />
     <type name="Smile\ProductLabel\Block\ProductLabel\ProductLabel">
-        <plugin name="Categorylabel" type="I95Dev\Productlabel\Plugin\Category" sortOrder="1" disable="false" />
+        <plugin name="Categorylabel" type="I95Dev\Productlabel\Plugin\Category" sortOrder="1" />
     </type>
 
 </config>
