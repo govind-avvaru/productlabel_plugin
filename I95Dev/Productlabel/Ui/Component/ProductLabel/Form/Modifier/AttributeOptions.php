@@ -48,25 +48,19 @@ class AttributeOptions extends \Smile\ProductLabel\Ui\Component\ProductLabel\For
     public function modifyMeta(array $meta)
     {
         $productLabel = $this->locator->getProductLabel();
-
         $options = [];
         if ($productLabel->getAttributeId()) {
             $options = $this->getAttributeOptions($productLabel->getAttributeId());
         }
-
         $meta['general']['children']['option_id']['arguments']['data']['options']    = $options;
-        $meta['general']['children']['option_label']['arguments']['data']['options'] = $options;
-
         $isNew = !$productLabel->getId();
-        $optionFieldVisible = $isNew && $productLabel->getAttributeId();
-
-//        $meta['general']['children']['option_id']['arguments']['data']['config']['disabled'] = !$isNew;
+        if(!$isNew) {
+            $meta['general']['children']['option_label']['arguments']['data']['options'] = $options;
+        }
+        $optionFieldVisible =  $isNew && $productLabel->getAttributeId();
         $meta['general']['children']['option_id']['arguments']['data']['config']['visible']  = $optionFieldVisible;
-
-        $meta['general']['children']['option_label']['arguments']['data']['config']['disabled'] = $isNew;
-        $meta['general']['children']['option_label']['arguments']['data']['config']['visible']  = !$isNew;
-
         return $meta;
+
     }
 
     /**
