@@ -56,42 +56,6 @@ class Collection extends \Smile\ProductLabel\Model\ResourceModel\ProductLabel\Gr
             'eaov.option_id = main_table.option_id',
             ['option_label' => 'value']
         )->group('main_table.product_label_id');
-//        $y =    $this->getSelect()->joinLeft(
-//            ['eaov' => $this->getTable('eav_attribute_option_value')],
-//            'eaov.option_id = main_table.option_id',
-//            ['option_label' => 'value']
-//        );
-//echo $y;
-//exit();
-//        $storeCondition = \Magento\Store\Model\Store::DEFAULT_STORE_ID;
-//        $storeCondition=0;
-//        echo $storeCondition;
-//        exit();
-//        echo $this->getFilter('store');
-//        exit();
-
-//        if ($this->getFilter('store')) {
-//            $storeId = current($this->getStoreIds());
-//
-//        $z=    $this->getSelect()->joinLeft(
-//                ['eaov_s' => $this->getTable('eav_attribute_option_value')],
-//                sprintf('eaov_s.option_id = main_table.option_id AND eaov_s.store_id = %s', $storeId),
-//                ['option_label' => 'value']
-//            );
-////        echo $z;
-////        exit();
-////
-//            $storeCondition = $this->getConnection()->getIfNullSql(
-//                "eaov_s.store_id",
-//                \Magento\Store\Model\Store::DEFAULT_STORE_ID
-//            );
-//        }
-////        echo $storeCondition;  //0
-////        exit();
-////
-//     $p=   $this->getSelect()->where('eaov.store_id = ?', $storeCondition);
-//        echo $p;
-//        exit();
     }
 
 }
